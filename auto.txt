@@ -1,0 +1,47 @@
+int data; 
+        
+void setup() { 
+  
+  pinMode(2,OUTPUT);
+  pinMode(3,OUTPUT);
+  pinMode(4,OUTPUT);
+  pinMode(5,OUTPUT);
+
+  Serial.begin(9600);     
+}
+void loop() {              
+data=Serial.read();       
+Serial.println(data);      
+delay(30);  
+
+if(data==97){          
+  digitalWrite(3,LOW);  
+  digitalWrite(2,HIGH);     
+  digitalWrite(4,LOW);       
+  digitalWrite(5,HIGH);      
+   }
+else if(data==99){    
+  digitalWrite(3,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  }
+else if(data==98){     
+  digitalWrite(3,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,HIGH);    
+ }
+ else if(data==100){      
+  digitalWrite(3,LOW);
+  digitalWrite(2,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,LOW);   
+  }
+else if(data==101){    
+  digitalWrite(2,LOW);
+  digitalWrite(3,HIGH);
+  digitalWrite(5,LOW);
+  digitalWrite(4,HIGH);  
+  }
+}
